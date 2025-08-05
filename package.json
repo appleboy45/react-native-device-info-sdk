@@ -1,0 +1,101 @@
+{
+  "name": "react-native-device-info-sdk",
+  "version": "1.0.0",
+  "description": "A React Native SDK for accessing device information from native platforms",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "react-native": "src/index.ts",
+  "source": "src/index.ts",
+  "files": [
+    "lib",
+    "android",
+    "ios",
+    "src",
+    "*.podspec",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
+  ],
+  "scripts": {
+    "build": "bob build",
+    "prepare": "bob build",
+    "test": "jest",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "example": "cd example && yarn"
+  },
+  "keywords": [
+    "react-native",
+    "device",
+    "info",
+    "native",
+    "ios",
+    "android"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/appleboy45/react-native-device-info-sdk.git"
+  },
+  "author": "Vineet Singh <singhvineet45@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/appleboy45/react-native-device-info-sdk/issues"
+  },
+  "homepage": "https://github.com/appleboy45/react-native-device-info-sdk#readme",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "@react-native/eslint-config": "*",
+    "@types/jest": "^28.1.2",
+    "@types/react": "~17.0.21",
+    "@types/react-native": "0.70.0",
+    "eslint": "^8.4.1",
+    "jest": "^28.1.1",
+    "react": "18.2.0",
+    "react-native": "0.72.6",
+    "react-native-builder-bob": "^0.20.0",
+    "typescript": "^4.5.2"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "engines": {
+    "node": ">= 16.0.0"
+  },
+  "packageManager": "yarn@1.22.15",
+  "jest": {
+    "preset": "react-native",
+    "modulePathIgnorePatterns": [
+      "<rootDir>/example/node_modules",
+      "<rootDir>/lib/"
+    ]
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": ["@react-native"],
+    "rules": {
+      "react-native/no-inline-styles": 0
+    }
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module",
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
+    ]
+  },
+  "codegenConfig": {
+    "name": "RNDeviceInfoSDKSpec",
+    "type": "modules",
+    "jsSrcsDir": "src"
+  }
+}
